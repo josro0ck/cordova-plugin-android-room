@@ -1,0 +1,27 @@
+{
+  "name": "cordova-plugin-room",
+  "version": "1.1.7-dev",
+  "description": "Cordova Room Plugin",
+  "types": "./types/index.d.ts",
+  "cordova": {
+    "id": "cordova-plugin-room",
+    "platforms": [
+      "android",
+      "browser"
+    ]
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-browser"
+  ],
+  "author": "JoshPlaza",
+  "license": "FREE",
+  "engines": {
+    "cordovaDependencies": {
+      "2.0.0": {
+        "cordova": ">100"
+      }
+    }
+  }
+}

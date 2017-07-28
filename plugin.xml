@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:rim="http://www.blackberry.com/ns/widgets"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="cordova-plugin-room"
+    version="1.1.7-dev">
+    <name>Room Plugin</name>
+    <description>Cordova Room Plugin</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova,device</keywords>
+    
+
+    <js-module src="www/roomPlugin.js" name="room">
+        <clobbers target="room" />
+    </js-module>
+
+    
+    <!-- android -->
+    <platform name="android">
+
+        <framework src="android.arch.persistence.room:runtime:1.0.0-alpha1" />
+        <framework src="android.arch.persistence.room:rxjava2:1.0.0-alpha1" />
+        
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="RoomPlugin" >
+                <param name="android-package" value="org.apache.cordova.room.RoomPlugin"/>
+            </feature>
+        </config-file>
+
+        <source-file src="src/android/RoomPlugin.java" target-dir="src/org/apache/cordova/room" />
+    </platform>
+
+
+    <!-- browser -->
+    <platform name="browser">
+        <config-file target="config.xml" parent="/*">
+            <feature name="RoomPlugin">
+                <param name="browser-package" value="RoomPlugin" />
+            </feature>
+        </config-file>
+
+        <js-module src="src/browser/DeviceProxy.js" name="DeviceProxy">
+            <runs />
+        </js-module>
+    </platform>
+
+
+</plugin>
