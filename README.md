@@ -43,7 +43,9 @@ API:
 MODEL:
 	The JSON objects that feed the database must have the following format:
 	[json]
+
 		{"uid":"10291", "firstName":"john", "lastName":"doe"}
+	
 	[\json]
 
 
