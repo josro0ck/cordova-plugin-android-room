@@ -1,27 +1,28 @@
------------------------------------------------------------
-    Room Plugin
------------------------------------------------------------
+
+# Room Plugin
+
 
 - This is a simple Cordova Room Plugin
 
 
 
-INSTALL:
-	in order to be able to compile you need to add:
+### INSTALL:
 
-	[groovy]
+	In order to be able to compile you need to add:
+
+	```
 		allprojects {
 		    repositories {
 		        ..
 		        maven { url 'https://maven.google.com' }
 		    }
 		}
-	[\groovy]
+	```
 
-API:
+### API:
 	In Order to perform database operations
 
-	[js]
+```
 
 		room.insert(usr);
 
@@ -38,16 +39,18 @@ API:
 		});
 
 
-	[\js]
+```
 	
-MODEL:
+### MODEL:
 	The JSON objects that feed the database must have the following format:
 
-	[json]
+```
 
 		{"uid":"10291", "firstName":"john", "lastName":"doe"}
 	
-	[\json]
+```
+
+
 
 
 
