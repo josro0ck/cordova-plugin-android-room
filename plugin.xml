@@ -19,16 +19,22 @@
     <!-- android -->
     <platform name="android">
 
-        <framework src="android.arch.persistence.room:runtime:1.0.0-alpha1" />
-        <framework src="android.arch.persistence.room:rxjava2:1.0.0-alpha1" />
+        <framework src="android.arch.persistence.room:runtime:1.0.0-alpha4" />
+        <framework src="android.arch.persistence.room:compiler:1.0.0-alpha4" />
         
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="RoomPlugin" >
-                <param name="android-package" value="org.apache.cordova.room.RoomPlugin"/>
+                <param name="android-package" value="com.plugin.room.RoomPlugin"/>
             </feature>
         </config-file>
 
-        <source-file src="src/android/RoomPlugin.java" target-dir="src/org/apache/cordova/room" />
+        <source-file src="src/android/RoomPlugin.java" target-dir="src/com/plugin/room" />
+
+        <source-file src="src/android/User.java" target-dir="src/com/plugin/room" />
+
+        <source-file src="src/android/UserDAO.java" target-dir="src/com/plugin/room" />
+
+        <source-file src="src/android/UsersDB.java" target-dir="src/com/plugin/room" />
     </platform>
 
 

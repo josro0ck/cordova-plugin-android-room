@@ -15,31 +15,29 @@ var app = {
         usersList = document.getElementById("usersList");
 
         console.log("init")
+        getAll();
 
         document.getElementById("insert").addEventListener("click", function(){
             let usr = getCurrentUser();
             room.insert(usr);
+            getAll();
         });
 
         document.getElementById("getAll").addEventListener("click", function(){
-            room.getAll(function(data){
-                console.log(data.uuid);
-                usersList.innerHTML = data.uuid;
-            });
+            getAll();
         });
 
         document.getElementById("find").addEventListener("click", function(){
             let usr = getCurrentUser();
             room.find(usr, function(data){
-                console.log(data.uuid)
+                usersList.innerHTML = JSON.stringify(data);
             });
         });
 
         document.getElementById("del").addEventListener("click", function(){
             let usr = getCurrentUser();
-            room.delete(usr, function(data){
-               console.log(data.uuid)
-           });
+            room.delete(usr);
+            getAll();
         });
 
     }
@@ -63,4 +61,12 @@ app.initialize();
          inputLast.value = ''
          return usr
      }
+
+     function getAll(){
+        room.getAll(function(data){
+            usersList.innerHTML = JSON.stringify(data);
+        });
+     }
+
+
 

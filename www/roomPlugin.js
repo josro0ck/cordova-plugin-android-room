@@ -10,7 +10,11 @@ channel.waitForInitialization('onCordovaInfoReady');
 let PLUGIN_NAME = "RoomPlugin";
 
 let errorCallback = function(e) {
-    utils.alert("[ERROR] Error: " + e);
+    utils.alert("Handled Server Error: " + e);
+}
+
+let clientErrorCallback = function(e) {
+    utils.alert("Handled Client Error: " + e);
 }
 
 function RoomPlugin() {
@@ -22,7 +26,14 @@ function RoomPlugin() {
 }
 
 RoomPlugin.prototype.insert = function(user,successCallback) {
-    exec(successCallback, errorCallback, PLUGIN_NAME, 'insert', [user]);
+    if(!(user.uid.trim() == "" && user.firstName.trim() == "" && user.lastName.trim() == "")){
+        if(user.uid.trim() == "" || Number.isInteger(parseInt(user.uid))){
+                exec(successCallback, errorCallback, PLUGIN_NAME, 'insert', [user]);
+            } else {
+                clientErrorCallback("Explicit user id must be an integer value")
+        }
+    }
+
 }
 
 RoomPlugin.prototype.getAll = function(successCallback) {
