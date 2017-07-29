@@ -8,19 +8,19 @@
 
 ### INSTALL:
 
-	In order to be able to compile you need to add:
+-	In order to be able to compile you need to add:
 
-	```
-		allprojects {
-		    repositories {
-		        ..
-		        maven { url 'https://maven.google.com' }
-		    }
-		}
-	```
+```
+	allprojects {
+	    repositories {
+	        ..
+	        maven { url 'https://maven.google.com' }
+	    }
+	}
+```
 
 ### API:
-	In Order to perform database operations
+-	In Order to perform database operations
 
 ```
 
@@ -42,7 +42,7 @@
 ```
 	
 ### MODEL:
-	The JSON objects that feed the database must have the following format:
+-	The JSON objects that feed the database must have the following format:
 
 ```
 
